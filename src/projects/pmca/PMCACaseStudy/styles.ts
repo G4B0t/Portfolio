@@ -309,7 +309,7 @@ export const ChallengeGrid = styled.div`
 `;
 export const UISystemGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: ${({ theme }) => theme.spacing[3]};
 
   article {
@@ -511,5 +511,18 @@ export const Closing = styled.section`
   }
   span {
     color: ${({ theme }) => theme.colors.textSecondary};
+  }
+`;
+export const ConfidentialityNote = styled.aside`
+  max-width: 56rem;
+  margin: ${({ theme }) => theme.spacing[7]} auto 0;
+  padding: ${({ theme }) => theme.spacing[4]};
+  border-left: 2px solid ${({ theme }) => theme.colors.accentSoft};
+  background: rgba(93, 68, 177, 0.1);
+
+  p {
+    margin: 0;
+    color: ${({ theme }) => theme.colors.textSecondary};
+    font-size: ${({ theme }) => theme.typography.sizes.sm};
   }
 `;

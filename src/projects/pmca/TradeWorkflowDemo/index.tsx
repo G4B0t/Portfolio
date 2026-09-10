@@ -106,6 +106,7 @@ export function TradeWorkflowDemo() {
   const [query, setQuery] = useState('');
   const activePrimaryIndex = primarySteps.findIndex((step) => step.id === activeTab);
   const highlightedStepIndex = activePrimaryIndex === -1 ? 2 : activePrimaryIndex;
+  const validationMessageId = (id: string) => `${id}-amount-validation`;
   const visibleRows = useMemo(
     () =>
       rows.filter(
@@ -182,6 +183,7 @@ export function TradeWorkflowDemo() {
             type="button"
             $active={index === highlightedStepIndex && activeTab !== 'cancelled'}
             $complete={index < highlightedStepIndex && activeTab !== 'cancelled'}
+            aria-pressed={activeTab === step.id}
             onClick={() => {
               setActiveTab(step.id);
               setSelectedIds([]);
@@ -202,6 +204,7 @@ export function TradeWorkflowDemo() {
               key={tab.id}
               type="button"
               $active={activeTab === tab.id}
+              aria-pressed={activeTab === tab.id}
               onClick={() => {
                 setActiveTab(tab.id);
                 setSelectedIds([]);
@@ -217,6 +220,7 @@ export function TradeWorkflowDemo() {
             key={tab.id}
             type="button"
             $active={activeTab === tab.id}
+            aria-pressed={activeTab === tab.id}
             onClick={() => {
               setActiveTab(tab.id);
               setSelectedIds([]);
@@ -252,6 +256,9 @@ export function TradeWorkflowDemo() {
       </Toolbar>
       <TableViewport>
         <DemoTable>
+          <caption className="sr-only">
+            Fictional trade notification records for the selected workflow state
+          </caption>
           <thead>
             <tr>
               <th>
@@ -284,8 +291,15 @@ export function TradeWorkflowDemo() {
                     value={row.amount}
                     onChange={(event) => updateAmount(row.id, event.target.value)}
                     aria-invalid={row.invalid || undefined}
+                    aria-describedby={
+                      row.invalid ? validationMessageId(row.id) : undefined
+                    }
                   />
-                  {row.invalid && <small>Use a whole positive amount</small>}
+                  {row.invalid && (
+                    <small id={validationMessageId(row.id)}>
+                      Use a whole positive amount
+                    </small>
+                  )}
                 </td>
                 <td>
                   <Status $state={row.invalid ? 'mismatch' : row.state}>
@@ -302,17 +316,17 @@ export function TradeWorkflowDemo() {
       {visibleRows.length === 0 && (
         <EmptyState>No fictional records match this workflow state.</EmptyState>
       )}
-      <ChangeSet aria-label="Local change set">
+      <ChangeSet aria-label="Local change set" aria-live="polite">
         <span>CHANGESET</span>
         <div>
           <b>
-            NEW <i>{changes.new}</i>
+            NEW <i aria-label="New records">{changes.new}</i>
           </b>
           <b>
-            UPDATED <i>{changes.updated}</i>
+            UPDATED <i aria-label="Updated records">{changes.updated}</i>
           </b>
           <b>
-            DELETED <i>{changes.deleted}</i>
+            DELETED <i aria-label="Deleted records">{changes.deleted}</i>
           </b>
         </div>
       </ChangeSet>

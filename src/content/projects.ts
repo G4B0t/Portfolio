@@ -5,8 +5,7 @@ export const projects: ProjectDefinition[] = [
     title: 'PMCA',
     subtitle: 'Enterprise frontend engineering',
     category: 'Professional work',
-    summary:
-      'A publication-safe look at frontend architecture for data-intensive enterprise workflows.',
+    summary: 'Frontend architecture for data-intensive enterprise workflows.',
     technologies: ['React', 'TypeScript', 'Redux Toolkit', 'DataGridPro'],
     featured: true,
     visual: 'enterprise',

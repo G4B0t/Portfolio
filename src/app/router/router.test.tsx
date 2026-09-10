@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { navigation } from '@/content/navigation';
 import { AppRouter } from './index';
 describe('AppRouter', () => {
-  it('renders the publication-safe PMCA case study', () => {
+  it('renders the PMCA case study', () => {
     render(
       <ThemeProvider>
         <MemoryRouter initialEntries={['/work/pmca']}>

@@ -5,7 +5,6 @@ import {
   Layers3,
   SlidersHorizontal,
   TableProperties,
-  Workflow,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CaseStudySection } from '@/components/common/CaseStudySection';
@@ -15,11 +14,11 @@ import { TradeWorkflowDemo } from '@/projects/pmca/TradeWorkflowDemo';
 import {
   ArchitectureFlow,
   ArchitectureNode,
-  Callout,
   ChallengeGrid,
   Closing,
   CodeInsight,
   CodePanel,
+  ConfidentialityNote,
   Dashboard,
   DashboardHeader,
   DashboardMeta,
@@ -122,35 +121,15 @@ export function PMCACaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="02 / Architecture"
-        title="Feature modules connected through explicit layers."
-        introduction="A sanitized view of a recurring frontend architecture: interface concerns stay close to the feature, while shared state and service boundaries keep cross-cutting behavior consistent."
-      >
-        <ArchitectureFlow aria-label="React UI flows through feature modules, state management, asynchronous actions, API services, and backend services.">
-          {[
-            'React UI',
-            'Feature modules',
-            'State management',
-            'Async actions',
-            'API services',
-            'Backend services',
-          ].map((label, index) => (
-            <ArchitectureNode key={label} $accent={index === 2 || index === 3}>
-              {label}
-            </ArchitectureNode>
-          ))}
-        </ArchitectureFlow>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="03 / Feature areas"
-        title="A product surface built from connected engineering domains."
-        introduction="These publication-safe areas summarize the modules and shared foundations I contributed to. The visual is an original representation, rather than a product screenshot."
+        eyebrow="02 / Product surface"
+        title="A large application built from connected engineering domains."
+        introduction="PMCA spans multiple functional areas rather than behaving like a single isolated frontend screen. The diagram summarizes that breadth without reproducing the production interface."
       >
         <FeatureVisual>
           <img
             src="/assets/features_areas.png"
             alt="Abstract diagram connecting operations, analysis, market data, workflows, and a shared interface system."
+            loading="lazy"
           />
         </FeatureVisual>
         <FeatureAreaList>
@@ -164,50 +143,94 @@ export function PMCACaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
+        eyebrow="03 / Frontend architecture"
+        title="Feature modules connected through explicit layers."
+        introduction="Interface concerns stay close to each feature while shared state and service boundaries keep cross-cutting behavior consistent."
+      >
+        <ArchitectureFlow aria-label="React UI flows through feature modules, state management, asynchronous orchestration, API services, and backend services.">
+          {[
+            'React UI',
+            'Feature modules · Forms, tables, workflows',
+            'State management · Redux Toolkit, selectors',
+            'Async orchestration · Thunks, transformations',
+            'API services · REST, Axios',
+            'Backend services',
+          ].map((label, index) => (
+            <ArchitectureNode key={label} $accent={index === 2 || index === 3}>
+              {label}
+            </ArchitectureNode>
+          ))}
+        </ArchitectureFlow>
+      </CaseStudySection>
+
+      <CaseStudySection
         eyebrow="04 / Data-intensive interfaces"
         title="Tables are an interaction system, not just a data display."
-        introduction="The source contains a reusable DataGridPro-based table layer and feature-specific table compositions. This original visual represents the engineering concerns without reproducing any real interface or data."
+        introduction="A reusable DataGridPro-based table layer and feature-specific compositions support dense operational work."
       >
         <ChallengeGrid>
           <div>
             <CheckCircle2 aria-hidden="true" size={21} />
             <h3>Controlled edits</h3>
             <p>
-              Row updates, custom cells, selection, and validation need deliberate state
-              transitions.
+              Row updates, validation, selection, and custom cells require explicit state
+              transitions rather than treating the table as passive display data.
             </p>
           </div>
           <div>
             <CheckCircle2 aria-hidden="true" size={21} />
             <h3>Useful density</h3>
             <p>
-              Filtering, exports, summaries, and domain-aware columns help operators make
-              sense of large record sets.
+              Filtering, export tools, summaries, and domain-aware columns help users work
+              efficiently across large record sets.
             </p>
           </div>
           <div>
             <CheckCircle2 aria-hidden="true" size={21} />
             <h3>Shared behavior</h3>
             <p>
-              Reusable renderers and table helpers keep repeated interaction rules
-              consistent across product areas.
+              Reusable table helpers and rendering patterns keep interaction rules
+              consistent across feature areas.
             </p>
           </div>
         </ChallengeGrid>
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="05 / Interactive workflow"
-        title="Explore a fictional notification workflow."
-        introduction="This original local demo distills a Trade Notification pattern I contributed to: state-specific queues, selection, editable records, validation, and explicit row lifecycle. Every record, label, date, and count is fictional; there is no API, product logic, or customer data behind it."
+        eyebrow="05 / Workflow & state orchestration"
+        title="Make state transitions visible, validated, and recoverable."
+        introduction="This local interactive demo recreates the engineering pattern behind data-heavy operational interfaces: queue state, selection, editable records, validation, and explicit row lifecycle. All records and values are fictional."
       >
         <TradeWorkflowDemo />
+        <Subheading>State orchestration</Subheading>
+        <WorkflowFlow aria-label="Generic record lifecycle from loaded to persisted">
+          {lifecycle.map((step, index) => (
+            <WorkflowStep key={step} $active={index === 2}>
+              {step}
+            </WorkflowStep>
+          ))}
+        </WorkflowFlow>
+        <ArchitectureFlow aria-label="User interaction flows through local state, validation, Redux actions, API services, state reconciliation, and UI feedback.">
+          {[
+            'User interaction',
+            'Local / grid state',
+            'Validation',
+            'Redux action / thunk',
+            'API service',
+            'State reconciliation',
+            'UI feedback',
+          ].map((label, index) => (
+            <ArchitectureNode key={label} $accent={index === 2 || index === 3}>
+              {label}
+            </ArchitectureNode>
+          ))}
+        </ArchitectureFlow>
       </CaseStudySection>
 
       <CaseStudySection
         eyebrow="06 / Reusable UI system"
         title="Shared components make complex work more consistent."
-        introduction="Alongside feature delivery, I created and improved reusable interaction primitives. This lets product areas share familiar behavior instead of solving the same UI problem repeatedly."
+        introduction="Feature delivery was supported by shared interface primitives. My work included both building new reusable components and improving existing controls used across multiple product areas."
       >
         <UISystemGrid>
           {pmcaCaseStudy.uiSystem.map((group, index) => {
@@ -229,44 +252,7 @@ export function PMCACaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="07 / Delivery workflow"
-        title="Engineering work benefits from visible progress and feedback."
-        introduction="This original workboard illustrates the kind of delivery rhythm around interface work: refinement, validation feedback, and workflow states. All identifiers, names, status counts, and period references inside the visual are fictional."
-      >
-        <FeatureVisual>
-          <img
-            src="/assets/PMCA_workboard.png"
-            alt="Fictional engineering workboard showing generic task states, review, and progress."
-          />
-          <WorkboardCaption>
-            Fictional delivery-board concept · no real tickets or project data
-          </WorkboardCaption>
-        </FeatureVisual>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="08 / Workflow engineering"
-        title="Make transitions visible, validated, and recoverable."
-        introduction="The product includes numerous asynchronous actions and feature slices. The lifecycle below is intentionally generic: it represents the kind of state orchestration visible in the codebase, not a proprietary business process."
-      >
-        <WorkflowFlow aria-label="Generic record lifecycle from loaded to persisted">
-          {lifecycle.map((step, index) => (
-            <WorkflowStep key={step} $active={index === 2}>
-              {step}
-            </WorkflowStep>
-          ))}
-        </WorkflowFlow>
-        <Callout>
-          <Workflow aria-hidden="true" size={20} />
-          <p>
-            Validation, pending states, failures, and success feedback are part of the
-            interaction contract—not an afterthought around an API request.
-          </p>
-        </Callout>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="09 / Engineering decisions"
+        eyebrow="07 / Engineering decisions"
         title="Complex interfaces become safer when their state is deliberate."
       >
         <DecisionGrid>
@@ -284,12 +270,12 @@ export function PMCACaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="10 / Scope and publication"
-        title="Confirmed contribution, presented with restraint."
+        eyebrow="08 / My contribution"
+        title="Feature delivery and shared frontend engineering."
       >
         <StackGrid>
           <Stack>
-            <Subheading>Feature work</Subheading>
+            <Subheading>Feature engineering</Subheading>
             <ul>
               {pmcaCaseStudy.confirmedFeatureContributions.map((area) => (
                 <li key={area}>{area}</li>
@@ -297,33 +283,50 @@ export function PMCACaseStudy() {
             </ul>
           </Stack>
           <Stack>
-            <Subheading>Shared UI work</Subheading>
+            <Subheading>Shared components created</Subheading>
             <ul>
-              {pmcaCaseStudy.confirmedSharedContributions.map((area) => (
+              {pmcaCaseStudy.sharedComponentsCreated.map((area) => (
                 <li key={area}>{area}</li>
               ))}
             </ul>
           </Stack>
           <Stack>
-            <Subheading>Publication boundary</Subheading>
-            <p>{pmcaCaseStudy.contributionNote}</p>
-            <p>
-              Source code, production data, customer information, endpoint details,
-              infrastructure, and proprietary financial logic are excluded by design.
-            </p>
+            <Subheading>Shared UI improvements</Subheading>
+            <ul>
+              {pmcaCaseStudy.sharedUIImprovements.map((area) => (
+                <li key={area}>{area}</li>
+              ))}
+            </ul>
           </Stack>
         </StackGrid>
+        <FeatureVisual>
+          <img
+            src="/assets/PMCA_workboard.png"
+            alt="Fictional engineering workboard showing generic task states, review, and progress."
+            loading="lazy"
+          />
+          <WorkboardCaption>
+            Fictional engineering workboard · no real tickets or project data
+          </WorkboardCaption>
+        </FeatureVisual>
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="11 / Code insight"
+        eyebrow="09 / Code insight"
         title="A small state model makes table changes inspectable."
         introduction="This simplified, original example shows the interaction principle used in the demo: validate locally, retain the user’s input, and record the row’s pending lifecycle explicitly."
       >
         <CodeInsight>
           <CodePanel>{`type Lifecycle = 'new' | 'updated' | 'deleted';
 
-function updateRecord(current: Record, amount: string): Record {
+type WorkflowRow = {
+  id: string;
+  amount: string;
+  lifecycle: Lifecycle;
+  isValid: boolean;
+};
+
+function updateRecord(current: WorkflowRow, amount: string): WorkflowRow {
   const isValid = /^[0-9]+(,[0-9]{3})*$/.test(amount);
 
   return {
@@ -334,23 +337,30 @@ function updateRecord(current: Record, amount: string): Record {
   };
 }`}</CodePanel>
           <ol>
-            <li>Keep a local copy of the changed value.</li>
-            <li>Validate before treating it as ready.</li>
-            <li>Expose the pending lifecycle until a future save reconciles it.</li>
+            <li>Preserve the edited value.</li>
+            <li>Validate the next state.</li>
+            <li>Track the row lifecycle explicitly.</li>
+            <li>Reconcile it during persistence.</li>
           </ol>
         </CodeInsight>
       </CaseStudySection>
 
+      <ConfidentialityNote>
+        <p>{pmcaCaseStudy.confidentialityNote}</p>
+      </ConfidentialityNote>
+
       <Closing>
         <p>Engineering at enterprise scale.</p>
-        <h2>Clear interfaces make complex operational work easier to trust.</h2>
+        <h2>
+          Complex React systems become easier to trust when their interfaces stay clear.
+        </h2>
         <span>
-          This case study shows only original, publication-safe patterns and confirmed
-          contribution areas.
+          PMCA reflects my experience across frontend architecture, data-intensive
+          interfaces, reusable systems, and stateful enterprise workflows.
         </span>
       </Closing>
 
-      <Link to="/" aria-label="Return to selected work">
+      <Link to="/#work" aria-label="Return to selected work">
         <ArrowLeft size={16} /> Return to selected work
       </Link>
     </Page>

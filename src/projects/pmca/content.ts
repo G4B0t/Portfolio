@@ -1,9 +1,9 @@
 export const pmcaCaseStudy = {
   title: 'PMCA',
-  category: 'Enterprise application · publication-safe case study',
+  category: 'Enterprise application',
   subtitle: 'Designing dependable interfaces for data-heavy financial workflows.',
   summary:
-    'PMCA is a large enterprise web application whose frontend brings together modular React screens, reusable interface primitives, asynchronous state, and operationally dense workflows. This case study deliberately describes engineering patterns—not client data, proprietary rules, or internal screens.',
+    'PMCA is a large enterprise web application built around modular React features, reusable interface primitives, asynchronous state management, and data-intensive operational workflows.',
   technologies: [
     'React',
     'TypeScript',
@@ -16,30 +16,26 @@ export const pmcaCaseStudy = {
   highlights: [
     {
       title: 'Modular product surface',
-      copy: 'Feature pages, shared UI, typed models, APIs, hooks, and store slices are separated so complex product areas can evolve without becoming one monolith.',
+      copy: 'Feature modules remain separated while sharing typed models, UI primitives, API boundaries, and state infrastructure.',
     },
     {
       title: 'Data-intensive interaction',
-      copy: 'Reusable table infrastructure supports dense records, filtering, selection, exports, custom renderers, and controlled row updates.',
+      copy: 'Dense operational screens combine filtering, selection, controlled edits, validation, exports, and domain-aware table behavior.',
     },
     {
       title: 'Stateful workflows',
-      copy: 'Async actions connect validation and UI intent to API calls, state reconciliation, loading states, and user feedback.',
+      copy: 'User intent progresses through validation, asynchronous actions, API work, state reconciliation, and visible feedback.',
     },
-  ],
-  areas: [
-    'Accounting-oriented operations and dashboards',
-    'Journal-entry and schedule management',
-    'Hedge-accounting administration',
-    'Trade and company-centered workflows',
-    'Market-data and reporting surfaces',
   ],
   confirmedFeatureContributions: [
     'Deals and contingent-analysis workflows',
-    'FX and interest-rate analysis',
-    'Hedge-accounting administration',
-    'Trade notifications and market-curve calculations',
-    'Initial design and iteration for deliverable workflows',
+    'FX analysis and interest-rate analysis',
+    'Hedge Accounting administration and its V2 evolution',
+    'Trade Notification workflows',
+    'Corrections to Journal Entry workflows',
+    'Initial UI design and subsequent corrections for Run Deliverables',
+    'Initial UI design and subsequent corrections for Scheduled Deliverables',
+    'Commodity, FX, and IR market-curve cards',
   ],
   featureAreas: [
     {
@@ -52,7 +48,7 @@ export const pmcaCaseStudy = {
     },
     {
       title: 'Market data',
-      copy: 'Market-curve visualizations and reusable calculation cards.',
+      copy: 'Commodity, FX, and IR market-curve cards alongside reporting surfaces.',
     },
     {
       title: 'Workflows',
@@ -63,47 +59,53 @@ export const pmcaCaseStudy = {
       copy: 'Components and interaction primitives used across the product.',
     },
   ],
-  confirmedSharedContributions: [
-    'Card, tile, step, accordion, and file-upload components',
-    'Improvements and corrections to buttons, tables, modals, inputs, autocomplete, checkboxes, and date pickers',
-    'Corrections in journal-entry workflows',
+  sharedComponentsCreated: ['Card', 'TileCard', 'Steps', 'Accordion', 'FileS3Uploader'],
+  sharedUIImprovements: [
+    'Button',
+    'Table',
+    'Modal',
+    'Input',
+    'AutoComplete',
+    'Checkbox',
+    'DatePicker',
   ],
   uiSystem: [
     {
-      title: 'Composition primitives',
-      items: ['Card', 'TileCard', 'Steps', 'Accordion'],
-      copy: 'Reusable building blocks for structured information and guided flows.',
+      title: 'Components created',
+      items: ['Card', 'TileCard', 'Steps', 'Accordion', 'FileS3Uploader'],
+      copy: 'New reusable primitives for structured information, guided flows, and file-based interactions.',
     },
     {
-      title: 'Data & file interaction',
-      items: ['Table', 'FileS3Uploader', 'Modal'],
-      copy: 'Common interaction surfaces for dense records, supporting actions, and file-based work.',
-    },
-    {
-      title: 'Form experience',
-      items: ['Button', 'Input', 'AutoComplete', 'Checkbox', 'DatePicker'],
-      copy: 'Improvements and corrections to controls that make complex forms more dependable.',
+      title: 'Shared UI improvements',
+      items: [
+        'Button',
+        'Table',
+        'Modal',
+        'Input',
+        'AutoComplete',
+        'Checkbox',
+        'DatePicker',
+      ],
+      copy: 'Corrections and improvements to existing controls used across complex forms and tables.',
     },
   ],
   engineeringDecisions: [
     {
-      problem: 'Dense records need safe edits.',
-      decision:
-        'Keep the changed value, validation result, and pending row lifecycle visible in the interface.',
-      why: 'Operators can see what still needs attention before a save or downstream action.',
+      problem: 'Complex table editing needs explicit state.',
+      decision: 'Represent untouched, changed, invalid, and pending rows explicitly.',
+      why: 'The interface can communicate what changed and what still requires attention.',
     },
     {
-      problem: 'Workflow queues can hide the overall state.',
-      decision:
-        'Use explicit status tabs with counts, focused record lists, and a clear selected state.',
-      why: 'The interface communicates both the current task and the surrounding workload.',
-    },
-    {
-      problem: 'Repeated interface behavior drifts across feature areas.',
+      problem: 'Repeated interaction patterns drift across feature areas.',
       decision: 'Build on shared table, form, modal, and feedback primitives.',
-      why: 'Improvements become repeatable and interaction expectations remain familiar.',
+      why: 'Feature code can focus on domain behavior while interaction patterns remain familiar.',
+    },
+    {
+      problem: 'Async workflows can hide loading, errors, and validation state.',
+      decision: 'Coordinate transitions through explicit asynchronous state management.',
+      why: 'Feedback stays predictable while application state remains easier to trace.',
     },
   ],
-  contributionNote:
-    'Gabriel confirmed contributions across these feature areas and shared interface components. Dates, measurable outcomes, exact client terminology, and business impact remain intentionally unspecified until separately confirmed for publication.',
+  confidentialityNote:
+    'Product interfaces and data shown in this case study are original recreations designed to communicate engineering concepts. Proprietary source code, production data, customer information, and confidential implementation details are intentionally excluded.',
 } as const;

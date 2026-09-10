@@ -22,7 +22,7 @@ describe('TradeWorkflowDemo', () => {
     expect(screen.queryByText('TX-001')).not.toBeInTheDocument();
   });
 
-  it('marks local changes when a record is edited or deleted', async () => {
+  it('tracks change counts and validation feedback for local edits', async () => {
     const user = userEvent.setup();
     renderDemo();
 
@@ -31,11 +31,17 @@ describe('TradeWorkflowDemo', () => {
     await user.type(amount, 'not a number');
 
     expect(screen.getByText('Needs correction')).toBeInTheDocument();
-    expect(screen.getByText('UPDATED')).toBeInTheDocument();
+    expect(screen.getByLabelText('Updated records')).toHaveTextContent('1');
+
+    await user.clear(amount);
+    await user.type(amount, '2,500');
+
+    expect(screen.queryByText('Needs correction')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Updated records')).toHaveTextContent('1');
 
     await user.click(screen.getByLabelText('Select TX-001'));
     await user.click(screen.getByRole('button', { name: /mark deleted/i }));
 
-    expect(screen.getByText('DELETED')).toBeInTheDocument();
+    expect(screen.getByLabelText('Deleted records')).toHaveTextContent('1');
   });
 });
