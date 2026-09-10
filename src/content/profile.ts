@@ -1,0 +1,1 @@
+export const profile = { name: 'G4B0t', role: 'Software Engineer', introduction: 'Building clear, reliable software across frontend, APIs, and engineering-focused systems.', about: 'This portfolio is being developed as a focused record of software engineering work. Project details are reviewed before publication.' };

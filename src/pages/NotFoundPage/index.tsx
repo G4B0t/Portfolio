@@ -1,0 +1,1 @@
+import { Link } from 'react-router-dom'; import styled from 'styled-components'; import { Container } from '@/components/ui/Container'; const Wrap = styled.section`padding:${({ theme }) => theme.spacing[9]} 0;`; export function NotFoundPage() { return <Wrap><Container><p>404</p><h1>Page not found.</h1><Link to="/">Return home</Link></Container></Wrap>; }

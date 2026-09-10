@@ -1,0 +1,3 @@
+import type { AnchorHTMLAttributes, PropsWithChildren } from 'react'; import styled from 'styled-components';
+const Element = styled.a`display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.75rem;padding:.7rem 1rem;border:1px solid ${({ theme }) => theme.colors.accent};border-radius:${({ theme }) => theme.radii.sm};background:${({ theme }) => theme.colors.accent};color:#07231d;font-weight:700;transition:transform ${({ theme }) => theme.transitions.default},background ${({ theme }) => theme.transitions.default};&:hover{transform:translateY(-2px);background:${({ theme }) => theme.colors.accentMuted};}`;
+export function ButtonLink(props: PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>) { return <Element {...props} />; }

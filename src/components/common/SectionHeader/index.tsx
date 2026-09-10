@@ -1,0 +1,3 @@
+import type { ReactNode } from 'react'; import styled from 'styled-components'; import { Heading } from '@/components/ui/Heading';
+const Wrap = styled.div`display:grid;gap:${({ theme }) => theme.spacing[3]};max-width:42rem;`; const Eyebrow = styled.p`margin:0;color:${({ theme }) => theme.colors.accent};font-family:${({ theme }) => theme.typography.display};font-size:${({ theme }) => theme.typography.sizes.sm};text-transform:uppercase;letter-spacing:.12em;`; const Copy = styled.p`margin:0;color:${({ theme }) => theme.colors.textMuted};`;
+export function SectionHeader({ eyebrow, title, children }: { eyebrow: string; title: string; children?: ReactNode }) { return <Wrap><Eyebrow>{eyebrow}</Eyebrow><Heading>{title}</Heading>{children && <Copy>{children}</Copy>}</Wrap>; }
