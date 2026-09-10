@@ -23,8 +23,8 @@ export const Card = styled.article`
 const variants = {
   enterprise: css`
     background:
-      linear-gradient(135deg, rgba(7, 8, 24, 0.22), rgba(7, 8, 24, 0.82)),
-      url('/assets/pmca_card_new.png') center / cover;
+      linear-gradient(135deg, rgba(7, 8, 24, 0.04), rgba(7, 8, 24, 0.22)),
+      url('/assets/pmca_card.png') center 46% / cover;
     .visual-art {
       opacity: 0;
     }
@@ -47,8 +47,11 @@ const variants = {
   `,
   api: css`
     background:
-      radial-gradient(circle at 70% 30%, rgba(83, 104, 216, 0.58), transparent 34%),
-      #111833;
+      linear-gradient(90deg, rgba(3, 10, 14, 0.28), rgba(3, 10, 14, 0.08)),
+      url('/assets/viva_aerobus_card.png') center / cover;
+    .visual-art {
+      opacity: 0;
+    }
     .visual-art i:nth-child(1) {
       width: 70%;
       height: 2px;

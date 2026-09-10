@@ -1,5 +1,12 @@
 # Portfolio changelog
 
+## 2026-09-10 — Viva Aerobus case-study foundation
+
+- Added an API engineering case study centered on ticket-scoped change delivery, contract validation, regression checks, and evidence-driven review.
+- Added an original local API contract-validation demo using fictional scenarios only.
+- Registered Viva Aerobus through the shared case-study registry.
+- Refined the PMCA and Viva Aerobus project cards with original, non-product visual assets.
+
 ## 2026-09-10 — PMCA polish baseline
 
 - Reworked PMCA copy to foreground engineering context, product surface, architecture, data-intensive interfaces, state orchestration, and contribution scope.

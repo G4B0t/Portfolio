@@ -4,7 +4,7 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 
 ## Current baseline
 
-- Active case study: PMCA at `/work/pmca`.
+- Active case studies: PMCA at `/work/pmca` and Viva Aerobus at `/work/viva-aerobus`.
 - Case-study architecture: `src/projects/caseStudyRegistry.ts` resolves page-specific implementations by project slug.
 - Visual direction: dark, cinematic portfolio with styled-components and centralized theme tokens.
 - PMCA uses original visuals and a local interactive workflow demo with fictional records.
@@ -17,6 +17,7 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 - Interactive trade-notification workflow demo with tabs, steps, validation, row lifecycle, and tests.
 - Case-study route scroll restoration to the page hero.
 - PMCA recruiter-facing copy and contribution-scope polish.
+- Viva Aerobus API case study foundation with an original local contract-validation demo.
 
 ## Next candidates
 
