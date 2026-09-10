@@ -5,12 +5,17 @@ import {
   DemoLabel,
   DemoTable,
   EmptyState,
+  ExceptionRoute,
   Panel,
+  PrimarySteps,
+  Step,
+  StepConnector,
   Status,
   Tab,
   TableViewport,
   Tabs,
   Toolbar,
+  ExceptionRoutes,
 } from './styles';
 
 type TabId = 'approval' | 'execution' | 'pending' | 'mismatch' | 'executed' | 'cancelled';
@@ -32,6 +37,15 @@ const tabs: { id: TabId; label: string }[] = [
   { id: 'mismatch', label: 'Needs review' },
   { id: 'executed', label: 'Executed' },
   { id: 'cancelled', label: 'Cancelled' },
+];
+const primarySteps: {
+  id: Extract<TabId, 'approval' | 'execution' | 'pending' | 'executed'>;
+  label: string;
+}[] = [
+  { id: 'approval', label: 'Approval' },
+  { id: 'execution', label: 'Ready' },
+  { id: 'pending', label: 'In progress' },
+  { id: 'executed', label: 'Executed' },
 ];
 const initialRows: DemoRow[] = [
   {
@@ -90,6 +104,8 @@ export function TradeWorkflowDemo() {
   const [rows, setRows] = useState(initialRows);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [query, setQuery] = useState('');
+  const activePrimaryIndex = primarySteps.findIndex((step) => step.id === activeTab);
+  const highlightedStepIndex = activePrimaryIndex === -1 ? 2 : activePrimaryIndex;
   const visibleRows = useMemo(
     () =>
       rows.filter(
@@ -159,6 +175,42 @@ export function TradeWorkflowDemo() {
   return (
     <Panel>
       <DemoLabel>Interactive workflow demonstration · fictional records</DemoLabel>
+      <PrimarySteps aria-label="Fictional notification workflow">
+        {primarySteps.map((step, index) => (
+          <Step
+            key={step.id}
+            type="button"
+            $active={index === highlightedStepIndex && activeTab !== 'cancelled'}
+            $complete={index < highlightedStepIndex && activeTab !== 'cancelled'}
+            onClick={() => {
+              setActiveTab(step.id);
+              setSelectedIds([]);
+            }}
+          >
+            <b>{index + 1}</b>
+            <span>{step.label}</span>
+            {index < primarySteps.length - 1 && <StepConnector aria-hidden="true" />}
+          </Step>
+        ))}
+      </PrimarySteps>
+      <ExceptionRoutes aria-label="Exception workflow routes">
+        <span>Exception routes</span>
+        {tabs
+          .filter((tab) => tab.id === 'mismatch' || tab.id === 'cancelled')
+          .map((tab) => (
+            <ExceptionRoute
+              key={tab.id}
+              type="button"
+              $active={activeTab === tab.id}
+              onClick={() => {
+                setActiveTab(tab.id);
+                setSelectedIds([]);
+              }}
+            >
+              {tab.label}
+            </ExceptionRoute>
+          ))}
+      </ExceptionRoutes>
       <Tabs aria-label="Select a workflow state">
         {tabs.map((tab) => (
           <Tab

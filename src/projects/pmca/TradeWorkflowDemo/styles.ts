@@ -19,6 +19,86 @@ export const DemoLabel = styled.p`
   letter-spacing: 0.08em;
   text-transform: uppercase;
 `;
+export const PrimarySteps = styled.div`
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: ${({ theme }) => theme.spacing[2]} 0;
+`;
+export const Step = styled.button<{ $active: boolean; $complete: boolean }>`
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(4.5rem, 1fr);
+  flex: 1 0 8.25rem;
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 8.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: ${({ theme }) => theme.colors.textMuted};
+  text-align: left;
+  font-size: ${({ theme }) => theme.typography.sizes.xs};
+
+  b {
+    display: grid;
+    place-items: center;
+    width: 1.65rem;
+    height: 1.65rem;
+    border: 1px solid ${({ theme }) => theme.colors.borderStrong};
+    border-radius: 50%;
+    background: rgba(7, 9, 28, 0.88);
+    color: ${({ theme }) => theme.colors.textMuted};
+    font-family: ${({ theme }) => theme.typography.display};
+    font-size: ${({ theme }) => theme.typography.sizes.xs};
+  }
+
+  ${({ $active, $complete, theme }) =>
+    ($active || $complete) &&
+    css`
+      color: ${theme.colors.text};
+      b {
+        border-color: ${theme.colors.accentBright};
+        background: ${$active ? 'rgba(120, 85, 255, 0.35)' : 'rgba(120, 85, 255, 0.18)'};
+        color: ${theme.colors.accentBright};
+      }
+    `}
+`;
+export const StepConnector = styled.i`
+  position: absolute;
+  top: 0.8rem;
+  left: 2rem;
+  width: calc(100% - 2rem);
+  height: 1px;
+  background: ${({ theme }) => theme.colors.borderStrong};
+  pointer-events: none;
+`;
+export const ExceptionRoutes = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing[2]};
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-family: ${({ theme }) => theme.typography.display};
+  font-size: ${({ theme }) => theme.typography.sizes.xs};
+  text-transform: uppercase;
+`;
+export const ExceptionRoute = styled.button<{ $active: boolean }>`
+  padding: 0.28rem 0.5rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radii.pill};
+  background: rgba(7, 9, 28, 0.72);
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-family: ${({ theme }) => theme.typography.display};
+  font-size: ${({ theme }) => theme.typography.sizes.xs};
+
+  ${({ $active, theme }) =>
+    $active &&
+    css`
+      border-color: ${theme.colors.accentBright};
+      color: ${theme.colors.text};
+    `}
+`;
 export const Tabs = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing[2]};
