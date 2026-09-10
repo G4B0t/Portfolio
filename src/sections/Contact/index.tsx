@@ -1,1 +1,5 @@
-import styled from 'styled-components'; import { Container } from '@/components/ui/Container'; const Section = styled.section`padding:${({ theme }) => theme.spacing[9]} 0;`; const Box = styled.div`display:grid;gap:${({ theme }) => theme.spacing[4]};max-width:44rem;`; const Title = styled.h2`margin:0;font-size:clamp(2.5rem,7vw,5rem);line-height:1;letter-spacing:-.06em;`; const Copy = styled.p`margin:0;color:${({ theme }) => theme.colors.textMuted};`; export function Contact() { return <Section id="contact"><Container><Box><p>Contact</p><Title>Let’s build something useful.</Title><Copy>Contact details will be added after they have been confirmed for publication.</Copy></Box></Container></Section>; }
+import { ArrowUpRight } from 'lucide-react';
+import { ButtonLink } from '@/components/ui/Button';
+import { Container } from '@/components/ui/Container';
+import { Box, Copy, Eyebrow, Section, Title } from './styles';
+export function Contact() { return <Section id="contact"><Container><Box><Eyebrow>04 / Contact</Eyebrow><Title>Let&apos;s build something useful.</Title><Copy>Professional contact details are being prepared for publication. The portfolio foundation is ready for the next conversation.</Copy><ButtonLink href="#contact" aria-disabled="true">Contact details coming soon <ArrowUpRight size={18} /></ButtonLink></Box></Container></Section>; }

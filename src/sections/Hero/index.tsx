@@ -1,3 +1,12 @@
-import { ArrowDown } from 'lucide-react'; import styled from 'styled-components'; import { ButtonLink } from '@/components/ui/Button'; import { Container } from '@/components/ui/Container'; import { profile } from '@/content/profile';
-const Section = styled.section`display:grid;align-items:center;min-height:min(43rem,calc(100vh - 4.5rem));padding:${({ theme }) => theme.spacing[8]} 0;`; const Grid = styled.div`display:grid;gap:${({ theme }) => theme.spacing[6]};max-width:58rem;`; const Label = styled.p`margin:0;color:${({ theme }) => theme.colors.accent};font-family:${({ theme }) => theme.typography.display};`; const Title = styled.h1`margin:0;font-size:${({ theme }) => theme.typography.sizes['3xl']};line-height:.98;letter-spacing:-.07em;`; const Copy = styled.p`max-width:42rem;margin:0;color:${({ theme }) => theme.colors.textMuted};font-size:${({ theme }) => theme.typography.sizes.lg};`;
-export function Hero() { return <Section><Container><Grid><Label>{profile.role}</Label><Title>{profile.introduction}</Title><Copy>Focused on thoughtfully designed systems and the engineering craft behind them.</Copy><ButtonLink href="#work">Explore selected work <ArrowDown size={18} /></ButtonLink></Grid></Container></Section>; }
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ButtonLink } from '@/components/ui/Button';
+import { Container } from '@/components/ui/Container';
+import { profile } from '@/content/profile';
+import { Actions, CapabilityList, Eyebrow, HeroGrid, HeroSection, HeroVisual, Lead, Signal, Title } from './styles';
+
+export function Hero() {
+  const reducedMotion = useReducedMotion();
+  const rise = reducedMotion ? {} : { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.55 } };
+  return <HeroSection><Container><HeroGrid><motion.div {...rise}><Eyebrow>01 / {profile.role}</Eyebrow><Title>{profile.name}<br /><span>Software Engineer.</span></Title><Lead>{profile.introduction}</Lead><Actions><ButtonLink href="#work">View projects <ArrowDown size={18} /></ButtonLink><ButtonLink href="#contact" data-variant="quiet">Contact <ArrowUpRight size={18} /></ButtonLink></Actions><CapabilityList aria-label="Core capabilities">{['Frontend systems', 'Full-stack delivery', 'APIs & automation'].map((item) => <Signal key={item}>{item}</Signal>)}</CapabilityList></motion.div><motion.div {...(reducedMotion ? {} : { initial: { opacity: 0, scale: .96 }, animate: { opacity: 1, scale: 1 }, transition: { duration: .7, delay: .15 } })}><HeroVisual aria-label="Abstract engineering visual placeholder"><div className="orb" /><div className="grid" /><div className="panel panel-one"><span>system / architecture</span><i /></div><div className="panel panel-two"><span>build</span><b>01</b></div><div className="line line-one" /><div className="line line-two" /></HeroVisual></motion.div></HeroGrid></Container></HeroSection>;
+}

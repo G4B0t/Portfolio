@@ -1,3 +1,12 @@
-import { Link } from 'react-router-dom'; import styled from 'styled-components'; import { navigation } from '@/content/navigation'; import { Container } from '@/components/ui/Container';
-const Bar = styled.header`position:sticky;top:0;z-index:10;border-bottom:1px solid ${({ theme }) => theme.colors.border};background:${({ theme }) => theme.colors.background};`; const Inner = styled(Container)`display:flex;align-items:center;justify-content:space-between;min-height:4.5rem;gap:1rem;`; const Brand = styled(Link)`font-family:${({ theme }) => theme.typography.display};font-weight:700;`; const Nav = styled.nav`display:none;gap:${({ theme }) => theme.spacing[4]};color:${({ theme }) => theme.colors.textMuted};font-size:${({ theme }) => theme.typography.sizes.sm};@media(min-width:${({ theme }) => theme.breakpoints.tablet}){display:flex;}`;
-export function Header() { return <Bar><Inner><Brand to="/" aria-label="G4B0t home">G4B0t</Brand><Nav aria-label="Main navigation">{navigation.map((item) => <a href={item.href} key={item.href}>{item.label}</a>)}</Nav></Inner></Bar>; }
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { navigation } from '@/content/navigation';
+import { profile } from '@/content/profile';
+import { Container } from '@/components/ui/Container';
+import { Bar, Brand, BrandMark, DesktopNav, Inner, MobileMenu, MobileToggle, NavLink, PrimaryLink } from './styles';
+
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const close = () => setIsOpen(false);
+  return <Bar><Inner as={Container}><Brand to="/" aria-label={`${profile.name} home`}><BrandMark>{profile.mark}</BrandMark><span>{profile.name}</span></Brand><DesktopNav aria-label="Main navigation">{navigation.map((item) => <NavLink href={item.href} key={item.href}>{item.label}</NavLink>)}<PrimaryLink href="#contact">Let&apos;s connect <ArrowUpRight size={15} /></PrimaryLink></DesktopNav><MobileToggle type="button" aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>{isOpen ? <X /> : <Menu />}</MobileToggle>{isOpen && <MobileMenu aria-label="Mobile navigation">{navigation.map((item) => <NavLink href={item.href} key={item.href} onClick={close}>{item.label}</NavLink>)}<PrimaryLink href="#contact" onClick={close}>Let&apos;s connect <ArrowUpRight size={15} /></PrimaryLink></MobileMenu>}</Inner></Bar>;
+}
