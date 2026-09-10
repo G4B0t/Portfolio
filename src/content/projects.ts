@@ -24,11 +24,11 @@ export const projects: ProjectDefinition[] = [
   {
     slug: 'gli-simulator',
     title: 'GLI Simulator',
-    subtitle: 'Engineering software',
+    subtitle: 'Scientific simulation platform',
     category: 'Academic project',
     summary:
-      'A forthcoming case study for an engineering and scientific software product.',
-    technologies: [],
+      'End-to-end software for simulating and interpreting intermittent gas-lift cycles.',
+    technologies: ['Python', 'FastAPI', 'React', 'TypeScript'],
     featured: true,
     visual: 'simulation',
   },

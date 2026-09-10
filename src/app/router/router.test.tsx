@@ -38,4 +38,19 @@ describe('AppRouter', () => {
       ),
     ).toBeInTheDocument();
   });
+
+  it('renders the GLI Simulator case study', () => {
+    render(
+      <ThemeProvider>
+        <MemoryRouter initialEntries={['/work/gli-simulator']}>
+          <AppRouter />
+        </MemoryRouter>
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByRole('heading', { name: 'GLI Simulator' })).toBeInTheDocument();
+    expect(
+      screen.getByText('Simulating the dynamics of conventional intermittent gas lift.'),
+    ).toBeInTheDocument();
+  });
 });
