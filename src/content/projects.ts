@@ -13,11 +13,11 @@ export const projects: ProjectDefinition[] = [
   {
     slug: 'viva-aerobus',
     title: 'Viva Aerobus',
-    subtitle: 'API engineering',
+    subtitle: 'API delivery and validation',
     category: 'Professional work',
     summary:
-      'A forthcoming case study. Public details will be validated before publication.',
-    technologies: [],
+      'API change delivery supported by contract validation and regression evidence.',
+    technologies: ['C#', 'ASP.NET Core', 'REST APIs', 'Postman / Newman'],
     featured: true,
     visual: 'api',
   },
