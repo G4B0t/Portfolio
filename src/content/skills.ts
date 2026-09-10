@@ -1,4 +1,8 @@
-export interface SkillDefinition { name: string; description: string; mark: string; }
+export interface SkillDefinition {
+  name: string;
+  description: string;
+  mark: string;
+}
 export const skills: SkillDefinition[] = [
   { name: 'React', description: 'Frontend UI', mark: 'R' },
   { name: 'TypeScript', description: 'Type-safe applications', mark: 'TS' },

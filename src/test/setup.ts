@@ -6,4 +6,7 @@ class IntersectionObserverMock {
   disconnect() {}
 }
 
-Object.defineProperty(window, 'IntersectionObserver', { writable: true, value: IntersectionObserverMock });
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  value: IntersectionObserverMock,
+});
