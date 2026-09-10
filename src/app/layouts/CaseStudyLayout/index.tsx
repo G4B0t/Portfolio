@@ -1,41 +1,25 @@
 import type { PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Container } from '@/components/ui/Container';
 import { Heading } from '@/components/ui/Heading';
 import type { ProjectDefinition } from '@/types/project';
-const Wrap = styled.div`
-  padding: ${({ theme }) => theme.spacing[8]} 0;
-`;
-const Hero = styled.header`
-  display: grid;
-  gap: ${({ theme }) => theme.spacing[4]};
-  max-width: 48rem;
-  padding-bottom: ${({ theme }) => theme.spacing[7]};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-`;
-const Kicker = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.accent};
-  font-family: ${({ theme }) => theme.typography.display};
-`;
-const Summary = styled.p`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.textMuted};
-  font-size: ${({ theme }) => theme.typography.sizes.lg};
-`;
+import { Fallback, Kicker, Summary, Wrap } from './styles';
 export function CaseStudyLayout({
   project,
   children,
-}: PropsWithChildren<{ project: ProjectDefinition }>) {
+}: PropsWithChildren<{ project?: ProjectDefinition }>) {
   return (
     <Wrap>
       <Container>
-        <Hero>
-          <Kicker>{project.category} / case study foundation</Kicker>
-          <Heading>{project.title}</Heading>
-          <Summary>{project.summary}</Summary>
-        </Hero>
-        {children}
+        {children ??
+          (project && (
+            <Fallback>
+              <Kicker>{project.category} / case study foundation</Kicker>
+              <Heading>{project.title}</Heading>
+              <Summary>{project.summary}</Summary>
+              <Link to="/">Return home</Link>
+            </Fallback>
+          ))}
       </Container>
     </Wrap>
   );
