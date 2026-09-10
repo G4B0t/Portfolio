@@ -1,6 +1,6 @@
 # Portfolio changelog
 
-## 2026-09-10 — Viva Aerobus case-study foundation
+## 2026-09-10 — Viva Aerobus API engineering case study
 
 - Added an API engineering case study centered on ticket-scoped change delivery, contract validation, regression checks, and evidence-driven review.
 - Added an original local API contract-validation demo using fictional scenarios only.

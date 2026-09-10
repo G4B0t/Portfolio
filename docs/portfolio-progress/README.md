@@ -17,14 +17,14 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 - Interactive trade-notification workflow demo with tabs, steps, validation, row lifecycle, and tests.
 - Case-study route scroll restoration to the page hero.
 - PMCA recruiter-facing copy and contribution-scope polish.
-- Viva Aerobus API case study foundation with an original local contract-validation demo.
+- Viva Aerobus API engineering case study with an original local contract-validation demo.
+- Shared case-study registry and reusable AI case-study workflow documentation.
 
 ## Next candidates
 
-1. Review PMCA visually on desktop and mobile before considering it final.
-2. Gather and validate public scope for Viva Aerobus before starting its case study.
-3. Gather and validate public scope for GLI Simulator before starting its case study.
-4. Consider asset compression separately; do not change formats as part of ordinary content edits.
+1. Begin GLI Simulator source analysis after its public portfolio scope is confirmed.
+2. Revisit Viva Aerobus visual polish only if a further review is requested.
+3. Consider asset compression separately when performance evidence justifies it; do not change formats as part of ordinary content edits.
 
 ## Update checklist
 

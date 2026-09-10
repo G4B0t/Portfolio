@@ -21,4 +21,21 @@ describe('AppRouter', () => {
     expect(screen.getByLabelText('Technology stack')).toBeInTheDocument();
     expect(navigation.find((item) => item.label === 'Work')?.href).toBe('/#work');
   });
+
+  it('renders the Viva Aerobus case study', () => {
+    render(
+      <ThemeProvider>
+        <MemoryRouter initialEntries={['/work/viva-aerobus']}>
+          <AppRouter />
+        </MemoryRouter>
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByRole('heading', { name: 'Viva Aerobus' })).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'Delivering dependable API changes for operational airline workflows.',
+      ),
+    ).toBeInTheDocument();
+  });
 });
