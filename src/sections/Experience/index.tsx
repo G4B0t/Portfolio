@@ -1,9 +1,7 @@
-import styled from 'styled-components';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { Container } from '@/components/ui/Container';
-const Section = styled.section`
-  padding: ${({ theme }) => theme.spacing[8]} 0;
-`;
+import { Section } from './styles';
+
 export function Experience() {
   return (
     <Section id="experience">
