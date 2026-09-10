@@ -3,11 +3,10 @@ export const projects: ProjectDefinition[] = [
   {
     slug: 'pmca',
     title: 'PMCA',
-    subtitle: 'Enterprise application',
+    subtitle: 'Enterprise frontend engineering',
     category: 'Professional work',
-    summary:
-      'A forthcoming case study. Details will be added after a careful, publication-safe review.',
-    technologies: [],
+    summary: 'Frontend architecture for data-intensive enterprise workflows.',
+    technologies: ['React', 'TypeScript', 'Redux Toolkit', 'DataGridPro'],
     featured: true,
     visual: 'enterprise',
   },

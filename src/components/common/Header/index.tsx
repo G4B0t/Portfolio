@@ -34,7 +34,7 @@ export function Header() {
             </NavLink>
           ))}
         </DesktopNav>
-        <DesktopCta href="#contact">
+        <DesktopCta href="/#contact">
           Let&apos;s connect <ArrowUpRight size={15} />
         </DesktopCta>
         <MobileToggle
@@ -52,7 +52,7 @@ export function Header() {
                 {item.label}
               </NavLink>
             ))}
-            <PrimaryLink href="#contact" onClick={close}>
+            <PrimaryLink href="/#contact" onClick={close}>
               Let&apos;s connect <ArrowUpRight size={15} />
             </PrimaryLink>
           </MobileMenu>

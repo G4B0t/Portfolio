@@ -7,7 +7,7 @@ describe('HomePage', () => {
   it('renders the featured-work carousel', () => {
     render(
       <ThemeProvider>
-        <MemoryRouter>
+        <MemoryRouter initialEntries={['/#work']}>
           <HomePage />
         </MemoryRouter>
       </ThemeProvider>,
@@ -22,5 +22,9 @@ describe('HomePage', () => {
       screen.getByRole('button', { name: 'Show previous project' }),
     ).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Show next project' })).toBeInTheDocument();
+    expect(HTMLElement.prototype.scrollIntoView).toHaveBeenCalledWith({
+      behavior: 'smooth',
+      block: 'start',
+    });
   });
 });
