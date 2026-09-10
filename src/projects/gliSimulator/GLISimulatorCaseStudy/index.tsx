@@ -80,9 +80,9 @@ export function GLISimulatorCaseStudy() {
             those changes as a connected physical cycle.
           </p>
           <p>
-            GLI Simulator was built as my academic engineering project: I developed the
-            scientific model, the service layer, and the interface used to explore its
-            results.
+            GLI Simulator was built as my academic engineering project: I implemented and
+            evolved the simulation model, the service layer, and the interface used to
+            explore its results.
           </p>
         </TextGrid>
         <CardGrid>
@@ -216,7 +216,7 @@ export function GLISimulatorCaseStudy() {
       <CaseStudySection
         eyebrow="08 / My contribution"
         title="End-to-end ownership across model, service, and interface."
-        introduction="I developed this academic project independently, from the physical simulation through the API and the interactive engineering workspace."
+        introduction="I developed this academic project end-to-end, from the physical simulation through the API and the interactive engineering workspace."
       >
         <ContributionGrid>
           {gliSimulatorCaseStudy.contributionGroups.map((group) => (
