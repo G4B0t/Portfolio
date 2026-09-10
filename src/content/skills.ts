@@ -1,9 +1,9 @@
-export type SkillIconKey = 'layers' | 'braces' | 'waypoints' | 'workflow' | 'chart';
-export interface SkillDefinition { name: string; description: string; icon: SkillIconKey; }
+export interface SkillDefinition { name: string; description: string; mark: string; }
 export const skills: SkillDefinition[] = [
-  { name: 'Frontend engineering', description: 'Clear, responsive product interfaces', icon: 'layers' },
-  { name: 'Full-stack development', description: 'Connected software systems', icon: 'braces' },
-  { name: 'API design & testing', description: 'Reliable service integrations', icon: 'waypoints' },
-  { name: 'Automation', description: 'Repeatable engineering workflows', icon: 'workflow' },
-  { name: 'Engineering software', description: 'Technical and scientific tools', icon: 'chart' },
+  { name: 'React', description: 'Frontend UI', mark: 'R' },
+  { name: 'TypeScript', description: 'Type-safe applications', mark: 'TS' },
+  { name: 'Python', description: 'Automation & scripting', mark: 'Py' },
+  { name: 'Node.js', description: 'Application services', mark: 'N' },
+  { name: '.NET / C#', description: 'Software systems', mark: 'C#' },
+  { name: 'APIs & automation', description: 'Reliable integrations', mark: 'API' },
 ];
