@@ -1,10 +1,162 @@
 import styled from 'styled-components';
-export const HeroSection = styled.section`position:relative;isolation:isolate;display:grid;align-items:center;min-height:clamp(38rem,58vw,45rem);overflow:hidden;padding:${({ theme }) => theme.spacing[8]} 0;`;
-export const HeroContent = styled.div`position:relative;z-index:2;max-width:38rem;`;
-export const Eyebrow = styled.p`display:flex;align-items:center;gap:1rem;margin:0 0 ${({ theme }) => theme.spacing[4]};color:${({ theme }) => theme.colors.accentBright};font-family:${({ theme }) => theme.typography.display};font-size:${({ theme }) => theme.typography.sizes.sm};letter-spacing:.12em;text-transform:uppercase;&::after{content:'';width:3rem;height:1px;background:${({ theme }) => theme.colors.accentSoft};}`;
-export const Title = styled.h1`margin:0;font-size:clamp(4rem,8vw,7rem);line-height:.84;letter-spacing:-.085em;& span{background:linear-gradient(105deg,${({ theme }) => theme.colors.text},${({ theme }) => theme.colors.accentBright});background-clip:text;color:transparent;}`;
-export const Lead = styled.p`max-width:32rem;margin:${({ theme }) => theme.spacing[5]} 0 0;color:${({ theme }) => theme.colors.textSecondary};font-size:${({ theme }) => theme.typography.sizes.lg};`;
-export const Actions = styled.div`display:flex;flex-wrap:wrap;gap:${({ theme }) => theme.spacing[3]};margin-top:${({ theme }) => theme.spacing[5]};& [data-variant='quiet']{background:rgba(6,8,18,.35);color:${({ theme }) => theme.colors.text};border-color:${({ theme }) => theme.colors.borderStrong};}`;
-export const CapabilityList = styled.ul`display:flex;flex-wrap:wrap;gap:${({ theme }) => theme.spacing[3]};margin:${({ theme }) => theme.spacing[5]} 0 0;padding:0;list-style:none;`;
-export const Signal = styled.li`color:${({ theme }) => theme.colors.textSecondary};font-family:${({ theme }) => theme.typography.display};font-size:${({ theme }) => theme.typography.sizes.xs};text-transform:uppercase;&::before{content:'•';margin-right:.45rem;color:${({ theme }) => theme.colors.accentBright};}`;
-export const HeroVisual = styled.div`position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 68% 28%,rgba(124,99,255,.3),transparent 25rem),linear-gradient(90deg,${({ theme }) => theme.colors.background} 0%,rgba(6,8,18,.94) 31%,rgba(6,8,18,.38) 65%,rgba(6,8,18,.76) 100%),linear-gradient(180deg,transparent 55%,${({ theme }) => theme.colors.background} 96%);.atmosphere{position:absolute;inset:0;opacity:.58;background:linear-gradient(115deg,transparent 40%,rgba(83,104,216,.28) 54%,transparent 76%)}.city{position:absolute;right:0;bottom:6%;width:68%;height:62%;opacity:.9;background:repeating-linear-gradient(90deg,transparent 0 3.5%,rgba(83,104,216,.45) 3.6% 4.4%,transparent 4.5% 7.4%),linear-gradient(90deg,transparent 0 5%,rgba(21,26,49,.9) 5% 10%,transparent 10% 17%,rgba(14,18,36,.95) 17% 25%,transparent 25% 32%,rgba(21,26,49,.9) 32% 45%,transparent 45% 52%,rgba(14,18,36,.95) 52% 64%,transparent 64%);clip-path:polygon(0 50%,8% 50%,8% 24%,20% 24%,20% 42%,31% 42%,31% 8%,48% 8%,48% 32%,57% 32%,57% 16%,76% 16%,76% 44%,100% 44%,100% 100%,0 100%)}.city-front{bottom:0;right:-7%;width:77%;height:37%;opacity:.95;background:linear-gradient(90deg,transparent,rgba(14,18,36,.96) 20%,rgba(21,26,49,.94) 60%,transparent),repeating-linear-gradient(90deg,transparent 0 7%,rgba(155,120,255,.35) 7.2% 7.7%,transparent 7.9% 14%);clip-path:polygon(0 68%,15% 68%,15% 35%,27% 35%,27% 55%,42% 55%,42% 15%,58% 15%,58% 47%,75% 47%,75% 22%,100% 22%,100% 100%,0 100%)}.workstation{position:absolute;right:13%;bottom:12%;width:min(38vw,32rem);height:38%;border-bottom:3px solid rgba(155,120,255,.65);transform:perspective(35rem) rotateX(54deg) rotateZ(-4deg);background:linear-gradient(90deg,transparent,rgba(83,104,216,.52),transparent);box-shadow:0 1rem 3rem rgba(83,104,216,.22)}.workstation i{position:absolute;display:block;border:1px solid rgba(185,170,255,.38);background:rgba(6,8,18,.55)}.workstation i:nth-child(1){left:10%;bottom:10%;width:34%;height:64%}.workstation i:nth-child(2){left:47%;bottom:14%;width:30%;height:54%}.workstation i:nth-child(3){right:7%;bottom:18%;width:14%;height:40%}.horizon{position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(180deg,transparent,${({ theme }) => theme.colors.background})}@media(max-width:${({ theme }) => theme.breakpoints.tablet}){.city{right:-20%;width:105%;opacity:.65}.workstation{right:-5%;width:86vw;opacity:.65}.atmosphere{opacity:.35}}`;
+
+export const HeroSection = styled.section`
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: clamp(39rem, 55vw, 46rem);
+  overflow: hidden;
+  padding: ${({ theme }) => theme.spacing[8]} 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+`;
+
+export const HeroContent = styled.div`
+  position: relative;
+  z-index: 2;
+  max-width: 38rem;
+  padding-top: 1.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding-block: 2rem;
+    background: linear-gradient(
+      90deg,
+      rgba(5, 6, 17, 0.96) 0%,
+      rgba(5, 6, 17, 0.76) 70%,
+      transparent 100%
+    );
+  }
+`;
+
+export const Eyebrow = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 ${({ theme }) => theme.spacing[4]};
+  color: ${({ theme }) => theme.colors.accentBright};
+  font-family: ${({ theme }) => theme.typography.display};
+  font-size: ${({ theme }) => theme.typography.sizes.sm};
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+    width: 3rem;
+    height: 1px;
+    background: ${({ theme }) => theme.colors.accentSoft};
+  }
+`;
+
+export const Title = styled.h1`
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.84;
+  letter-spacing: -0.085em;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+
+  & span {
+    background: linear-gradient(
+      105deg,
+      ${({ theme }) => theme.colors.text} 5%,
+      #d0a0ff 50%,
+      ${({ theme }) => theme.colors.accentBright}
+    );
+    background-clip: text;
+    color: transparent;
+  }
+`;
+
+export const Lead = styled.p`
+  max-width: 32rem;
+  margin: ${({ theme }) => theme.spacing[5]} 0 0;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: ${({ theme }) => theme.typography.sizes.lg};
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
+`;
+export const Actions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing[3]};
+  margin-top: ${({ theme }) => theme.spacing[5]};
+  & [data-variant='quiet'] {
+    background: rgba(5, 6, 17, 0.5);
+    color: ${({ theme }) => theme.colors.text};
+    border-color: ${({ theme }) => theme.colors.borderStrong};
+  }
+`;
+export const CapabilityList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing[3]};
+  margin: ${({ theme }) => theme.spacing[5]} 0 0;
+  padding: 0;
+  list-style: none;
+`;
+export const Signal = styled.li`
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-family: ${({ theme }) => theme.typography.display};
+  font-size: ${({ theme }) => theme.typography.sizes.xs};
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  text-transform: uppercase;
+  &::before {
+    content: '•';
+    margin-right: 0.45rem;
+    color: ${({ theme }) => theme.colors.accentBright};
+  }
+`;
+
+export const HeroVisual = styled.div`
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      90deg,
+      ${({ theme }) => theme.colors.background} 0%,
+      rgba(5, 6, 17, 0.97) 27%,
+      rgba(5, 6, 17, 0.38) 58%,
+      rgba(5, 6, 17, 0.1) 78%,
+      rgba(5, 6, 17, 0.46) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 6, 17, 0.12) 42%,
+      ${({ theme }) => theme.colors.background} 100%
+    ),
+    url('/assets/gabriel-hero-anime.png');
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: radial-gradient(
+      circle at 72% 20%,
+      rgba(119, 83, 255, 0.16),
+      transparent 27rem
+    );
+    pointer-events: none;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    background-image:
+      linear-gradient(
+        90deg,
+        ${({ theme }) => theme.colors.background} 0%,
+        rgba(5, 6, 17, 0.94) 52%,
+        rgba(5, 6, 17, 0.48) 90%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(5, 6, 17, 0.1) 45%,
+        ${({ theme }) => theme.colors.background} 100%
+      ),
+      url('/assets/gabriel-hero-anime.png');
+    background-position:
+      center,
+      center,
+      62% center;
+  }
+`;

@@ -1,1 +1,9 @@
-export const profile = { name: 'Gabriel Torrejón', mark: 'GT', role: 'Software Engineer', introduction: 'Building considered software for products, platforms, and complex systems.', about: 'This portfolio is being developed as a focused record of software engineering work. Project details are reviewed before publication.' };
+export const profile = {
+  name: 'Gabriel Torrejón',
+  mark: 'GT',
+  role: 'Software Engineer',
+  introduction:
+    'Building considered software for products, platforms, and complex systems.',
+  about:
+    'This portfolio is being developed as a focused record of software engineering work. Project details are reviewed before publication.',
+};

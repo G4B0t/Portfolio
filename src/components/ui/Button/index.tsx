@@ -1,3 +1,29 @@
-import type { AnchorHTMLAttributes, PropsWithChildren } from 'react'; import styled from 'styled-components';
-const Element = styled.a`display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.75rem;padding:.7rem 1rem;border:1px solid ${({ theme }) => theme.colors.accent};border-radius:${({ theme }) => theme.radii.sm};background:${({ theme }) => theme.colors.accent};color:${({ theme }) => theme.colors.textOnAccent};font-weight:700;transition:transform ${({ theme }) => theme.transitions.default},background ${({ theme }) => theme.transitions.default},box-shadow ${({ theme }) => theme.transitions.default};&:hover{transform:translateY(-2px);background:${({ theme }) => theme.colors.accentBright};box-shadow:${({ theme }) => theme.shadows.glowAccent};}`;
-export function ButtonLink(props: PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>) { return <Element {...props} />; }
+import type { AnchorHTMLAttributes, PropsWithChildren } from 'react';
+import styled from 'styled-components';
+const Element = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border-radius: ${({ theme }) => theme.radii.sm};
+  background: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.textOnAccent};
+  font-weight: 700;
+  transition:
+    transform ${({ theme }) => theme.transitions.default},
+    background ${({ theme }) => theme.transitions.default},
+    box-shadow ${({ theme }) => theme.transitions.default};
+  &:hover {
+    transform: translateY(-2px);
+    background: ${({ theme }) => theme.colors.accentBright};
+    box-shadow: ${({ theme }) => theme.shadows.glowAccent};
+  }
+`;
+export function ButtonLink(
+  props: PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>,
+) {
+  return <Element {...props} />;
+}
