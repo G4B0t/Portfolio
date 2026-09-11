@@ -73,8 +73,11 @@ const variants = {
   `,
   simulation: css`
     background:
-      radial-gradient(circle at 28% 70%, rgba(124, 99, 255, 0.55), transparent 32%),
-      #12152b;
+      linear-gradient(90deg, rgba(3, 10, 17, 0.26), rgba(3, 10, 17, 0.06)),
+      url('/assets/gli_simulator_card.png') center / cover;
+    .visual-art {
+      opacity: 0;
+    }
     .visual-art i:nth-child(1) {
       width: 76%;
       height: 56%;

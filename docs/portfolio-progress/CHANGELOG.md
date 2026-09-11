@@ -1,5 +1,11 @@
 # Portfolio changelog
 
+## 2026-09-10 — GLI Simulator scientific-computing case study
+
+- Added an academic engineering case study that presents the implemented scientific model, API boundary, React interface, and verification approach without reusing source or simulation data.
+- Added an original local cycle-explorer demonstration with fictional normalized values.
+- Registered GLI Simulator through the shared case-study registry.
+
 ## 2026-09-10 — Viva Aerobus API engineering case study
 
 - Added an API engineering case study centered on ticket-scoped change delivery, contract validation, regression checks, and evidence-driven review.
