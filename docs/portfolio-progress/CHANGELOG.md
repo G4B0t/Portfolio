@@ -1,5 +1,11 @@
 # Portfolio changelog
 
+## 2026-09-11 — About and Experience review baseline
+
+- Reworked the home-page About section around verified education, an engineering thesis, and three publication-safe working principles.
+- Replaced the Experience placeholder with a publication-safe professional timeline based on the reviewed CV and prior portfolio project analysis.
+- Added review context and publication boundaries for both sections in `ABOUT_EXPERIENCE_REVIEW.md`.
+
 ## 2026-09-10 — GLI Simulator scientific-computing case study
 
 - Added an academic engineering case study that presents the implemented scientific model, API boundary, React interface, and verification approach without reusing source or simulation data.

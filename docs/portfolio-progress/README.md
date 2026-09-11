@@ -20,6 +20,7 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 - Viva Aerobus API engineering case study with an original local contract-validation demo.
 - GLI Simulator scientific-computing case study with an original local cycle-explorer demo.
 - Shared case-study registry and reusable AI case-study workflow documentation.
+- About and Experience sections are prepared for content and presentation review on `feature/about-section`; see `ABOUT_EXPERIENCE_REVIEW.md` for scope and validation context.
 
 ## Next candidates
 
