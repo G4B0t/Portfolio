@@ -7,15 +7,16 @@ This note records the intent and publication boundaries for the About and Experi
 ## About
 
 - Presents a systems-oriented engineering profile across interfaces, backend services, and engineering applications.
-- States a verified academic foundation: Systems Engineering at Universidad Católica Boliviana “San Pablo” (UCB), with complementary Udemy coursework in Python, React, and ASP.NET Core.
+- States a verified academic foundation: Systems Engineering at Universidad Católica Boliviana “San Pablo” (UCB), framed as the basis for approaching complex technical systems.
 - Uses three principles to explain the work approach: make complexity understandable, design for dependable change, and connect model, service, and interface.
 - Keeps location out of this section; it remains in the footer only.
 
 ## Experience
 
-- Presents two verified periods at a high level: current consulting and software-development work at DvSoft, and project-based full-stack systems delivery from 2022 to 2025.
+- Presents two verified periods at a high level: current consulting and software-development work at DvSoft, and freelance full-stack delivery through independent and family-run projects from 2022 to 2025, performed in parallel with DvSoft.
 - Describes technologies and responsibilities only at a general, publication-safe level: C#/.NET, REST APIs, React, TypeScript, Angular, Node.js, operational interfaces, validation, reporting, and iterative delivery.
 - Avoids client names, customer data, internal product names, metrics, ticket identifiers, private architecture, credentials, and internal URLs.
+- States the confirmed delivery of four freelance projects without adding unverified outcomes, metrics, or responsibilities.
 - Does not claim titles, outcomes, or responsibilities that are not supported by the reviewed CV and portfolio project analysis.
 
 ## Implementation

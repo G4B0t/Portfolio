@@ -12,7 +12,7 @@ export const profile = {
       'The projects in this portfolio reflect a consistent approach: model the system carefully, make behavior observable, and give people an interface they can reason with.',
     ],
     education:
-      'Systems Engineering at Universidad Católica Boliviana “San Pablo” (UCB), complemented by applied coursework in Python, React, and ASP.NET Core through Udemy.',
+      'Systems Engineer from Universidad Católica Boliviana “San Pablo” (UCB), with an engineering background that shapes how I approach complex technical systems.',
     principles: [
       {
         title: 'Make complexity understandable',
@@ -49,10 +49,10 @@ export const profile = {
       },
       {
         period: '2022 — 2025',
-        role: 'Full-stack Software Developer',
-        organization: 'Project-based systems delivery',
+        role: 'Freelance Full-stack Software Developer',
+        organization: 'Independent & family-run projects',
         summary:
-          'Built web systems for professional organizations and event-oriented operations, from workflow definition through delivery.',
+          'Delivered four web projects for professional organizations and event-oriented operations while working in parallel at DvSoft, taking each from requirements through implementation and delivery.',
         highlights: [
           'Node.js and React applications for registration, user management, project coordination, and event workflows.',
           'Administrative interfaces designed around clear roles, records, schedules, and operational visibility.',
