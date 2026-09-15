@@ -17,7 +17,7 @@ describe('HomePage', () => {
       screen.getByRole('heading', { name: 'Projects with intent.' }),
     ).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'PMCA' })).toBeInTheDocument();
-    expect(screen.getByText('01 / 03')).toBeInTheDocument();
+    expect(screen.getByText('01 / 04')).toBeInTheDocument();
     expect(
       screen.getByRole('button', { name: 'Show previous project' }),
     ).toBeInTheDocument();
