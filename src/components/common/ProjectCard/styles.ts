@@ -104,6 +104,15 @@ const variants = {
       opacity: 0;
     }
   `,
+  association: css`
+    background:
+      linear-gradient(90deg, rgba(4, 8, 21, 0.46), rgba(5, 8, 23, 0.1)),
+      url('/assets/ciab_card.png') center 53% / cover;
+
+    .visual-art {
+      opacity: 0;
+    }
+  `,
 };
 export const Visual = styled.div<{ $variant: ProjectVisualKey }>`
   position: relative;

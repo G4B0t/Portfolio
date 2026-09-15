@@ -4,7 +4,7 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 
 ## Current baseline
 
-- Active case studies: PMCA at `/work/pmca`, Viva Aerobus at `/work/viva-aerobus`, and GLI Simulator at `/work/gli-simulator`.
+- Active case studies: PMCA at `/work/pmca`, Viva Aerobus at `/work/viva-aerobus`, GLI Simulator at `/work/gli-simulator`, Olimpiadas Docentes at `/work/olimpiadas-docentes`, and CIAB Tarija at `/work/ciab-tarija`.
 - Case-study architecture: `src/projects/caseStudyRegistry.ts` resolves page-specific implementations by project slug.
 - Visual direction: dark, cinematic portfolio with styled-components and centralized theme tokens.
 - PMCA uses original visuals and a local interactive workflow demo with fictional records.
