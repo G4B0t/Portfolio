@@ -43,5 +43,18 @@ export const projects: ProjectDefinition[] = [
     featured: true,
     visual: 'sports',
   },
+  {
+    slug: 'ciab-tarija',
+    title: 'CIAB Tarija',
+    subtitle: 'Membership operations platform',
+    category: 'Client project',
+    summary:
+      'A web platform for member administration, institutional operations, fees, documents, and certificate verification.',
+    technologies: ['React', 'Redux Toolkit', 'Node.js', 'Express', 'Sequelize', 'MySQL'],
+    featured: true,
+    visual: 'association',
+    year: 2024,
+    role: 'Client liaison & frontend contributor',
+  },
 ];
 export const featuredProjects = projects.filter((project) => project.featured);

@@ -1,4 +1,5 @@
-export type ProjectVisualKey = 'enterprise' | 'api' | 'simulation' | 'sports';
+export type ProjectVisualKey =
+  'enterprise' | 'api' | 'simulation' | 'sports' | 'association';
 export interface ProjectDefinition {
   slug: string;
   title: string;

@@ -1,5 +1,11 @@
 # Portfolio changelog
 
+## 2026-09-15 — CIAB Tarija membership operations case study
+
+- Added a publication-safe client-project case study for CIAB Tarija, covering verified product architecture, membership operations, and a clearly bounded contribution story.
+- Added an original interactive member-operations demo with fictional records, role switching, filtering, and record selection.
+- Registered CIAB Tarija through the shared case-study registry and added it to selected work.
+
 ## 2026-09-11 — About and Experience review baseline
 
 - Reworked the home-page About section around verified education, an engineering thesis, and three publication-safe working principles.

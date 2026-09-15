@@ -3,6 +3,7 @@ import { GLISimulatorCaseStudy } from '@/projects/gliSimulator/GLISimulatorCaseS
 import { PMCACaseStudy } from '@/projects/pmca/PMCACaseStudy';
 import { VivaAerobusCaseStudy } from '@/projects/vivaAerobus/VivaAerobusCaseStudy';
 import { OlimpiadasDocentesCaseStudy } from '@/projects/olimpiadasDocentes/OlimpiadasDocentesCaseStudy';
+import { CIABTarijaCaseStudy } from '@/projects/ciabTarija/CIABTarijaCaseStudy';
 
 type CaseStudyComponent = ComponentType;
 
@@ -11,4 +12,5 @@ export const caseStudyRegistry: Record<string, CaseStudyComponent> = {
   pmca: PMCACaseStudy,
   'viva-aerobus': VivaAerobusCaseStudy,
   'olimpiadas-docentes': OlimpiadasDocentesCaseStudy,
+  'ciab-tarija': CIABTarijaCaseStudy,
 };
