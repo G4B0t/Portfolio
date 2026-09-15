@@ -32,5 +32,16 @@ export const projects: ProjectDefinition[] = [
     featured: true,
     visual: 'simulation',
   },
+  {
+    slug: 'olimpiadas-docentes',
+    title: 'Olimpiadas Docentes',
+    subtitle: 'Event operations platform',
+    category: 'Portfolio reconstruction',
+    summary:
+      'A fictionalized showcase of sports-event registration, role-based operations, results, and reporting.',
+    technologies: ['PHP', 'CodeIgniter 4', 'MySQL', 'Bootstrap', 'mPDF'],
+    featured: true,
+    visual: 'sports',
+  },
 ];
 export const featuredProjects = projects.filter((project) => project.featured);

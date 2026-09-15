@@ -96,6 +96,14 @@ const variants = {
       background: rgba(244, 241, 250, 0.45);
     }
   `,
+  sports: css`
+    background:
+      linear-gradient(90deg, rgba(2, 8, 15, 0.12), rgba(2, 8, 15, 0.02)),
+      url('/assets/olimpiadas_card.png') center / cover;
+    .visual-art {
+      opacity: 0;
+    }
+  `,
 };
 export const Visual = styled.div<{ $variant: ProjectVisualKey }>`
   position: relative;

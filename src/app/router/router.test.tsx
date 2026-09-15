@@ -53,4 +53,20 @@ describe('AppRouter', () => {
       screen.getByText('Simulating the dynamics of conventional intermittent gas lift.'),
     ).toBeInTheDocument();
   });
+
+  it('renders the Olimpiadas Docentes case study', () => {
+    render(
+      <ThemeProvider>
+        <MemoryRouter initialEntries={['/work/olimpiadas-docentes']}>
+          <AppRouter />
+        </MemoryRouter>
+      </ThemeProvider>,
+    );
+
+    expect(screen.getByRole('heading', { name: 'Olimpiadas Docentes' })).toBeInTheDocument();
+    expect(
+      screen.getByText('A safe, fictionalized reconstruction of a multi-role sports event platform.'),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText('Technology stack')).toBeInTheDocument();
+  });
 });
