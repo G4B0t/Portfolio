@@ -71,15 +71,16 @@ export function CATTarijaCaseStudy() {
       </Hero>
 
       <CaseStudySection
-        eyebrow="01 / Product context"
-        title="Institutional operations need clear, enforceable access boundaries."
-        introduction="C.A.T. Tarija centralizes administrative work in an operational workspace whose available tools change with each person's assigned role."
+        eyebrow="01 / Project scope"
+        title="An institutional platform connects administrative operations in one workspace."
+        introduction="C.A.T. Tarija was delivered by a three-developer team to support distinct institutional responsibilities through role-aware operations."
       >
         <TextGrid>
           <p>
-            The Colegio de Arquitectos de Tarija needed a platform that could support
-            distinct institutional responsibilities without reducing the entire product
-            to one undifferentiated administrative interface.
+            The platform brings together multiple administrative areas while giving each
+            institutional responsibility an appropriately focused operational context.
+            Identity, access, and navigation are part of the wider product rather than
+            the product's complete scope.
           </p>
           <p>
             Development ran from September 2024 through March 2025. The system was
@@ -102,7 +103,26 @@ export function CATTarijaCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="02 / Access architecture"
+        eyebrow="02 / My contribution"
+        title="Full-stack delivery focused on identity, permissions, and operational context."
+        introduction="My contribution covered the complete access lifecycle across backend and frontend; the broader product was delivered with a three-developer team."
+      >
+        <ContributionGrid>
+          {catTarijaCaseStudy.contributionGroups.map((group) => (
+            <article key={group.title}>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </ContributionGrid>
+      </CaseStudySection>
+
+      <CaseStudySection
+        eyebrow="03 / Access architecture"
         title="Roles, processes, sections, and menus resolve into one focused workspace."
         introduction="This original architecture map abstracts the verified access structure without revealing production schemas, endpoints, or infrastructure details."
       >
@@ -122,7 +142,7 @@ export function CATTarijaCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="03 / Interactive demo"
+        eyebrow="04 / Interactive demo"
         title="Switch the active role to see the permitted workspace change."
         introduction="This original local demonstration is modeled on the verified access structure. Every person, role assignment, process, and state is fictional."
       >
@@ -130,7 +150,7 @@ export function CATTarijaCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow="04 / Engineering decisions"
+        eyebrow="05 / Engineering decisions"
         title="Access control is part of the product workflow, not just the sign-in screen."
       >
         <DecisionGrid>
@@ -145,25 +165,6 @@ export function CATTarijaCaseStudy() {
             </article>
           ))}
         </DecisionGrid>
-      </CaseStudySection>
-
-      <CaseStudySection
-        eyebrow="05 / My contribution"
-        title="Full-stack delivery of identity, permissions, and operational context."
-        introduction="The platform was built by a three-developer team. My work focused on the full access lifecycle across backend and frontend."
-      >
-        <ContributionGrid>
-          {catTarijaCaseStudy.contributionGroups.map((group) => (
-            <article key={group.title}>
-              <h3>{group.title}</h3>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </ContributionGrid>
       </CaseStudySection>
 
       <Note>
