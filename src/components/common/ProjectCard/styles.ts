@@ -113,6 +113,25 @@ const variants = {
       opacity: 0;
     }
   `,
+  cat: css`
+    background:
+      linear-gradient(90deg, rgba(5, 10, 28, 0.56), rgba(8, 12, 33, 0.08)),
+      url('/assets/cat_tarija_card.png') center / cover;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(227, 220, 253, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(227, 220, 253, 0.09) 1px, transparent 1px);
+      background-size: 2.5rem 2.5rem;
+      content: '';
+    }
+
+    .visual-art {
+      opacity: 0;
+    }
+  `,
 };
 export const Visual = styled.div<{ $variant: ProjectVisualKey }>`
   position: relative;
