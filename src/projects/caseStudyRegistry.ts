@@ -4,6 +4,7 @@ import { PMCACaseStudy } from '@/projects/pmca/PMCACaseStudy';
 import { VivaAerobusCaseStudy } from '@/projects/vivaAerobus/VivaAerobusCaseStudy';
 import { OlimpiadasDocentesCaseStudy } from '@/projects/olimpiadasDocentes/OlimpiadasDocentesCaseStudy';
 import { CIABTarijaCaseStudy } from '@/projects/ciabTarija/CIABTarijaCaseStudy';
+import { CATTarijaCaseStudy } from '@/projects/catTarija/CATTarijaCaseStudy';
 
 type CaseStudyComponent = ComponentType;
 
@@ -13,4 +14,5 @@ export const caseStudyRegistry: Record<string, CaseStudyComponent> = {
   'viva-aerobus': VivaAerobusCaseStudy,
   'olimpiadas-docentes': OlimpiadasDocentesCaseStudy,
   'ciab-tarija': CIABTarijaCaseStudy,
+  'cat-tarija': CATTarijaCaseStudy,
 };

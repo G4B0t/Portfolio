@@ -56,5 +56,18 @@ export const projects: ProjectDefinition[] = [
     year: 2024,
     role: 'Client liaison & frontend contributor',
   },
+  {
+    slug: 'cat-tarija',
+    title: 'C.A.T. Tarija',
+    subtitle: 'Identity & access operations',
+    category: 'Client project',
+    summary:
+      'A role-aware administrative platform for the Colegio de Arquitectos de Tarija.',
+    technologies: ['React', 'Redux Toolkit', 'Node.js', 'Express', 'Sequelize', 'MySQL'],
+    featured: true,
+    visual: 'cat',
+    year: 2025,
+    role: 'Full-stack Developer — Identity & Access Management',
+  },
 ];
 export const featuredProjects = projects.filter((project) => project.featured);

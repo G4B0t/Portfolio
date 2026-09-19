@@ -113,6 +113,60 @@ const variants = {
       opacity: 0;
     }
   `,
+  cat: css`
+    background:
+      radial-gradient(circle at 74% 23%, rgba(226, 162, 91, 0.35), transparent 22%),
+      radial-gradient(circle at 27% 78%, rgba(82, 119, 218, 0.38), transparent 31%),
+      linear-gradient(135deg, #101b36, #182347 56%, #30203e);
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(227, 220, 253, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(227, 220, 253, 0.09) 1px, transparent 1px);
+      background-size: 2.5rem 2.5rem;
+      content: '';
+    }
+
+    .visual-art {
+      grid-template-columns: 1.35fr 0.72fr;
+      grid-template-rows: repeat(2, 1fr);
+      align-items: stretch;
+      gap: 0.65rem;
+      opacity: 1;
+    }
+
+    .visual-art i {
+      border: 1px solid rgba(232, 226, 255, 0.46);
+      border-radius: 0.45rem;
+      background: rgba(8, 14, 37, 0.66);
+      box-shadow: 0 0.8rem 1.8rem rgba(5, 8, 27, 0.28);
+    }
+
+    .visual-art i:nth-child(1) {
+      grid-row: span 2;
+      background:
+        linear-gradient(90deg, rgba(244, 230, 255, 0.75) 68%, transparent 68%) 1rem 1.25rem / 66% 2px no-repeat,
+        linear-gradient(90deg, rgba(244, 230, 255, 0.38) 48%, transparent 48%) 1rem 1.85rem / 66% 2px no-repeat,
+        radial-gradient(circle at 25% 69%, rgba(109, 152, 255, 0.9) 0 0.52rem, transparent 0.56rem),
+        rgba(8, 14, 37, 0.7);
+    }
+
+    .visual-art i:nth-child(2) {
+      background:
+        linear-gradient(90deg, #e6b16f 42%, transparent 42%) 0.85rem 0.85rem / 70% 2px no-repeat,
+        linear-gradient(90deg, rgba(232, 226, 255, 0.4) 68%, transparent 68%) 0.85rem 1.4rem / 70% 2px no-repeat,
+        rgba(8, 14, 37, 0.66);
+    }
+
+    .visual-art i:nth-child(3) {
+      background:
+        radial-gradient(circle at 31% 50%, #85d7b8 0 0.28rem, transparent 0.32rem),
+        linear-gradient(90deg, rgba(232, 226, 255, 0.52) 50%, transparent 50%) 1.45rem 50% / 55% 2px no-repeat,
+        rgba(8, 14, 37, 0.66);
+    }
+  `,
 };
 export const Visual = styled.div<{ $variant: ProjectVisualKey }>`
   position: relative;
