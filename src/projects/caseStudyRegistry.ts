@@ -5,6 +5,7 @@ import { VivaAerobusCaseStudy } from '@/projects/vivaAerobus/VivaAerobusCaseStud
 import { OlimpiadasDocentesCaseStudy } from '@/projects/olimpiadasDocentes/OlimpiadasDocentesCaseStudy';
 import { CIABTarijaCaseStudy } from '@/projects/ciabTarija/CIABTarijaCaseStudy';
 import { CATTarijaCaseStudy } from '@/projects/catTarija/CATTarijaCaseStudy';
+import { BingoCaseStudy } from '@/projects/bingo/BingoCaseStudy';
 
 type CaseStudyComponent = ComponentType;
 
@@ -15,4 +16,5 @@ export const caseStudyRegistry: Record<string, CaseStudyComponent> = {
   'olimpiadas-docentes': OlimpiadasDocentesCaseStudy,
   'ciab-tarija': CIABTarijaCaseStudy,
   'cat-tarija': CATTarijaCaseStudy,
+  bingo: BingoCaseStudy,
 };

@@ -4,6 +4,20 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { navigation } from '@/content/navigation';
 import { AppRouter } from './index';
 describe('AppRouter', () => {
+  it('renders Bingo with its contribution scope and interactive example', () => {
+    render(
+      <ThemeProvider>
+        <MemoryRouter initialEntries={['/work/bingo']}>
+          <AppRouter />
+        </MemoryRouter>
+      </ThemeProvider>,
+    );
+    expect(screen.getByRole('heading', { name: 'Bingo', level: 1 })).toBeInTheDocument();
+    expect(
+      screen.getByText(/Negotiation with the end client was handled by someone else/),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Call next number' })).toBeInTheDocument();
+  });
   it('renders the PMCA case study', () => {
     render(
       <ThemeProvider>

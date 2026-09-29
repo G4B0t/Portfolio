@@ -21,6 +21,33 @@ export const Card = styled.article`
   }
 `;
 const variants = {
+  bingo: css`
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.colors.surface},
+      ${({ theme }) => theme.colors.surfaceElevated}
+    );
+
+    .visual-art {
+      grid-template-columns: repeat(3, 3.5rem);
+      align-items: center;
+      transform: rotate(-12deg);
+    }
+
+    .visual-art i {
+      width: 3.5rem;
+      height: 3.5rem;
+      border: 2px solid ${({ theme }) => theme.colors.accentBright};
+      border-radius: ${({ theme }) => theme.radii.pill};
+      background: ${({ theme }) => theme.colors.surface};
+      box-shadow: ${({ theme }) => theme.shadows.glowSubtle};
+    }
+
+    .visual-art i:nth-child(2) {
+      transform: translateY(1rem);
+      background: ${({ theme }) => theme.colors.accent};
+    }
+  `,
   enterprise: css`
     background:
       linear-gradient(135deg, rgba(7, 8, 24, 0.04), rgba(7, 8, 24, 0.22)),
