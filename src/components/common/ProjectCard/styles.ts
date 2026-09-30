@@ -21,6 +21,15 @@ export const Card = styled.article`
   }
 `;
 const variants = {
+  encuentro: css`
+    background:
+      linear-gradient(90deg, rgba(3, 14, 24, 0.4), rgba(3, 14, 24, 0.04)),
+      url('/assets/dbencuentro_card.png') center 54% / cover;
+
+    .visual-art {
+      opacity: 0;
+    }
+  `,
   bingo: css`
     background:
       linear-gradient(90deg, rgba(3, 6, 20, 0.5), rgba(3, 6, 20, 0.08)),
