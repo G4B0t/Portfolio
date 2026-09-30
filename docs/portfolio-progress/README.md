@@ -4,7 +4,7 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 
 ## Current baseline
 
-- Active case studies: PMCA at `/work/pmca`, Viva Aerobus at `/work/viva-aerobus`, GLI Simulator at `/work/gli-simulator`, Olimpiadas Docentes at `/work/olimpiadas-docentes`, and CIAB Tarija at `/work/ciab-tarija`.
+- Active case studies: PMCA at `/work/pmca`, Viva Aerobus at `/work/viva-aerobus`, GLI Simulator at `/work/gli-simulator`, Olimpiadas Docentes at `/work/olimpiadas-docentes`, CIAB Tarija at `/work/ciab-tarija`, and Bingo at `/work/bingo`.
 - Case-study architecture: `src/projects/caseStudyRegistry.ts` resolves page-specific implementations by project slug.
 - Visual direction: dark, cinematic portfolio with styled-components and centralized theme tokens.
 - PMCA uses original visuals and a local interactive workflow demo with fictional records.
@@ -12,6 +12,7 @@ This folder is the repository-local source of truth for portfolio progress. Upda
 
 ## Completed
 
+- Bingo case study with verified product scope, user-confirmed full-stack contribution, and an original fictional round demo; see `BINGO_REVIEW.md` for evidence and claim limits.
 - Home page visual refresh, section imagery, navigation, footer, and back-to-top behavior.
 - PMCA project card and publication-safe PMCA case study.
 - Interactive trade-notification workflow demo with tabs, steps, validation, row lifecycle, and tests.

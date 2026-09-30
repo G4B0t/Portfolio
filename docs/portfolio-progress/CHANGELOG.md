@@ -1,5 +1,13 @@
 # Portfolio changelog
 
+## 2026-09-29 — Bingo full-stack case study
+
+- Reviewed the two Bingo repositories in read-only mode and represented them as one product.
+- Added Bingo to selected work and the case-study registry with centralized content and theme-based styles.
+- Credited complete software development while explicitly excluding end-client negotiation.
+- Added an original fictional round demo with call history, card checks, reset, and interaction tests.
+- Recorded public evidence boundaries in `BINGO_REVIEW.md`; no source code or client assets were reused.
+
 ## 2026-09-15 — CIAB Tarija membership operations case study
 
 - Added a publication-safe client-project case study for CIAB Tarija, covering verified product architecture, membership operations, and a clearly bounded contribution story.

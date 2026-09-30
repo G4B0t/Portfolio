@@ -21,6 +21,15 @@ export const Card = styled.article`
   }
 `;
 const variants = {
+  bingo: css`
+    background:
+      linear-gradient(90deg, rgba(3, 6, 20, 0.5), rgba(3, 6, 20, 0.08)),
+      url('/assets/bingo_card.png') center 52% / cover;
+
+    .visual-art {
+      opacity: 0;
+    }
+  `,
   enterprise: css`
     background:
       linear-gradient(135deg, rgba(7, 8, 24, 0.04), rgba(7, 8, 24, 0.22)),
