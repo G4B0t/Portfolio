@@ -22,30 +22,12 @@ export const Card = styled.article`
 `;
 const variants = {
   bingo: css`
-    background: linear-gradient(
-      135deg,
-      ${({ theme }) => theme.colors.surface},
-      ${({ theme }) => theme.colors.surfaceElevated}
-    );
+    background:
+      linear-gradient(90deg, rgba(3, 6, 20, 0.5), rgba(3, 6, 20, 0.08)),
+      url('/assets/bingo_card.png') center 52% / cover;
 
     .visual-art {
-      grid-template-columns: repeat(3, 3.5rem);
-      align-items: center;
-      transform: rotate(-12deg);
-    }
-
-    .visual-art i {
-      width: 3.5rem;
-      height: 3.5rem;
-      border: 2px solid ${({ theme }) => theme.colors.accentBright};
-      border-radius: ${({ theme }) => theme.radii.pill};
-      background: ${({ theme }) => theme.colors.surface};
-      box-shadow: ${({ theme }) => theme.shadows.glowSubtle};
-    }
-
-    .visual-art i:nth-child(2) {
-      transform: translateY(1rem);
-      background: ${({ theme }) => theme.colors.accent};
+      opacity: 0;
     }
   `,
   enterprise: css`
