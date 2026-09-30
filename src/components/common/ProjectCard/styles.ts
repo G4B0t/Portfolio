@@ -23,45 +23,11 @@ export const Card = styled.article`
 const variants = {
   encuentro: css`
     background:
-      radial-gradient(circle at 72% 28%, rgba(56, 224, 196, 0.32), transparent 18%),
-      linear-gradient(145deg, #082c31, #07141f 62%, #17142d);
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(122, 255, 231, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(122, 255, 231, 0.08) 1px, transparent 1px);
-      background-size: 2.2rem 2.2rem;
-      content: '';
-    }
+      linear-gradient(90deg, rgba(3, 14, 24, 0.4), rgba(3, 14, 24, 0.04)),
+      url('/assets/dbencuentro_card.png') center 54% / cover;
 
     .visual-art {
-      grid-template-columns: repeat(3, 3.2rem);
-      align-items: end;
-      transform: translateY(0.4rem);
-    }
-
-    .visual-art i {
-      height: 3.5rem;
-      border: 1px solid rgba(126, 255, 230, 0.54);
-      border-radius: 0.45rem 0.45rem 0.1rem 0.1rem;
-      background: linear-gradient(180deg, rgba(37, 182, 157, 0.7), rgba(5, 31, 39, 0.94));
-      box-shadow: 0 0 1.5rem rgba(59, 230, 200, 0.14);
-    }
-
-    .visual-art i:nth-child(2) {
-      height: 6.4rem;
-      border-color: rgba(255, 199, 92, 0.72);
-      background: linear-gradient(
-        180deg,
-        rgba(183, 126, 30, 0.72),
-        rgba(36, 30, 28, 0.95)
-      );
-    }
-
-    .visual-art i:nth-child(3) {
-      height: 2.5rem;
+      opacity: 0;
     }
   `,
   bingo: css`
