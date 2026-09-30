@@ -1,5 +1,6 @@
 import type { ProjectDefinition } from '@/types/project';
 import { bingoProject } from '@/projects/bingo/content';
+import { dbEncuentroProject } from '@/projects/dbEncuentro/content';
 export const projects: ProjectDefinition[] = [
   {
     slug: 'pmca',
@@ -71,5 +72,6 @@ export const projects: ProjectDefinition[] = [
     role: 'Full-stack Developer — Identity & Access Management',
   },
   bingoProject,
+  dbEncuentroProject,
 ];
 export const featuredProjects = projects.filter((project) => project.featured);

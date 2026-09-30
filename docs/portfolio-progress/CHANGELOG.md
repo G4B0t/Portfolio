@@ -1,5 +1,12 @@
 # Portfolio changelog
 
+## 2026-09-29 — DBEncuentro full-stack case study
+
+- Reviewed the DBEncuentro frontend and backend repositories in read-only mode and represented them as one event-operations product.
+- Credited complete software development while explicitly excluding negotiation with the end client.
+- Added a fictional interactive control center covering accreditation, credential previews, reception scans, and medal standings.
+- Kept all client data, assets, credentials, source code, and private infrastructure details outside the portfolio.
+
 ## 2026-09-29 — Bingo full-stack case study
 
 - Reviewed the two Bingo repositories in read-only mode and represented them as one product.
